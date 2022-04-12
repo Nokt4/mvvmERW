@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="mvvmERW.View.Page1">
+    <ContentPage.Content>
+        <StackLayout>
+            <ListView
+                x:Name="studList" 
+                ItemsSource="{Binding Bosses}"
+                SelectedItem="{Binding SelectedBosses}" 
+                HasUnevenRows="True">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <ViewCell.View>
+                                <StackLayout>
+                                    <Label 
+                                        Text="{Binding Name}" 
+                                        FontSize="40"  
+                                        TextColor="Black"/>
+                                    <Label 
+                                        Text="{Binding HP}"
+                                        FontSize="20" 
+                                        TextColor="Black"/>
+                                    <Label 
+                                        Text="{Binding Location}"
+                                        FontSize="20" 
+                                        TextColor="Black"/>
+                                    <Label 
+                                        Text="{Binding Drops}"
+                                        FontSize="20" 
+                                        TextColor="Black"/>
+                                </StackLayout>
+                            </ViewCell.View>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+            <Button Text="Add Stud" Command="{Binding CreateBossesCommand}"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

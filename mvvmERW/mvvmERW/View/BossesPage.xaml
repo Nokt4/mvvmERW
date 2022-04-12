@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="mvvmERW.View.Page1">
+    <ContentPage.Content>
+        <StackLayout>
+            <Entry Text="{Binding Name}" x:Name="name"/>
+            <Entry Text="{Binding HP}" x:Name="hp"/>
+            <Entry Text="{Binding Location}" x:Name="location"/>
+            <Entry Text="{Binding Drops}" x:Name="drops"/>
+            <Button Command="{Binding ListViewModel.SaveBossesCommand}" CommandParameter="{Binding}" Text="add"/>
+            <Button Command="{Binding ListViewModel.DeleteBossesCommand}" CommandParameter="{Binding}" Text="del"/>
+            <Button Command="{Binding ListViewModel.BackCommand}" Text="Cancel"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
